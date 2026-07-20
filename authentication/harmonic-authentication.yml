@@ -1,0 +1,30 @@
+generated: '2026-07-19'
+method: searched
+source: https://aristotle.harmonic.fun/ (Dashboard -> API Keys); https://pypi.org/project/aristotlelib/
+description: >-
+  The Aristotle API authenticates every request with a single API key. Keys are
+  created in the Aristotle dashboard (sign in at https://aristotle.harmonic.fun,
+  Dashboard -> API Keys). The official aristotlelib SDK/CLI reads the key from
+  the ARISTOTLE_API_KEY environment variable or an explicit --api-key flag. There
+  is no documented OAuth / OpenID Connect / scope surface — access is a single
+  bearer secret per account. No OpenAPI is published, so this profile is captured
+  from the provider's docs rather than derived from a spec.
+summary:
+  types:
+  - apiKey
+  api_key_delivery:
+  - environment_variable: ARISTOTLE_API_KEY
+  - cli_flag: --api-key
+  oauth2_flows: []
+schemes:
+- name: aristotleApiKey
+  type: apiKey
+  description: >-
+    Per-account API key created in the Aristotle dashboard and sent on every
+    request over HTTPS. The exact HTTP header name is not publicly documented;
+    the SDK supplies it from ARISTOTLE_API_KEY or --api-key.
+  in: header
+  sources:
+  - https://aristotle.harmonic.fun/
+key_management:
+  create: https://aristotle.harmonic.fun (Dashboard -> API Keys)
