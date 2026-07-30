@@ -1,20 +1,70 @@
 aid: harmonic
 name: Harmonic
-description: 'Harmonic is a company surfaced as a portfolio company of kleiner-perkins and added to the
-  API Evangelist network as a stub for enrichment. Sector: ai. This profile is a lead awaiting the enrichment
-  pipeline.'
+description: >-
+  Harmonic is a Palo Alto AI lab building Mathematical Superintelligence (MSI) —
+  AI that reasons with rigorous, verifiable logic rather than statistical pattern
+  matching. Its flagship product, Aristotle, is a formal reasoning agent that
+  uses Lean 4 to prove and formally verify graduate- and research-level problems
+  in mathematics and software. Developers access Aristotle through the Aristotle
+  API (https://aristotle.harmonic.fun) and the official Python SDK/CLI
+  (aristotlelib): submit Lean 4 proof files with `sorry` placeholders, plain
+  English math problems, or LaTeX research papers, and Aristotle attempts to
+  complete, formalize, and formally verify them — running autonomously for up to
+  24 hours on larger tasks and returning only formally checked results. Harmonic
+  was co-founded by Vlad Tenev (co-founder of Robinhood) and Tudor Achim, and is
+  backed by Kleiner Perkins.
 url: https://raw.githubusercontent.com/api-evangelist/harmonic/refs/heads/main/apis.yml
 x-type: company
 x-source: kleiner-perkins-portfolio
-x-tier: stub
+x-tier: enriched
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
+image: https://www.harmonic.fun/images/harmonic-blue.svg
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
 - Ai
-apis: []
+- Mathematics
+- Formal Verification
+- Theorem Proving
+- Lean
+- Machine Reasoning
+- Developer Tools
+apis:
+- name: Aristotle API
+  description: >-
+    Programmatic access to Aristotle, Harmonic's formal reasoning agent. Over
+    HTTPS with an API key, submit Lean 4 proofs with `sorry` placeholders,
+    natural-language math problems, or LaTeX papers; Aristotle fills sorries,
+    formalizes documents into Lean 4, and returns only formally verified results.
+    The API is asynchronous — submit a job and poll/download the result — and is
+    driven primarily through the official aristotlelib Python SDK and `aristotle`
+    CLI.
+  humanURL: https://aristotle.harmonic.fun
+  baseURL: https://aristotle.harmonic.fun
+  tags:
+  - Formal Verification
+  - Theorem Proving
+  - Lean
+  - Mathematics
+  properties:
+  - type: SignUp
+    url: https://aristotle.harmonic.fun/auth/login?screen_hint=signup
+  - type: Login
+    url: https://aristotle.harmonic.fun/auth/login
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -23,3 +73,42 @@ maintainers:
 common:
 - type: Website
   url: https://www.harmonic.fun
+- type: DeveloperPortal
+  url: https://aristotle.harmonic.fun
+- type: SignUp
+  url: https://aristotle.harmonic.fun/auth/login?screen_hint=signup
+- type: Login
+  url: https://aristotle.harmonic.fun/auth/login
+- type: TermsOfService
+  url: https://aristotle.harmonic.fun/terms
+- type: PrivacyPolicy
+  url: https://aristotle.harmonic.fun/privacy
+- type: Blog
+  url: https://harmonic.fun/news
+- type: GitHubOrganization
+  url: https://github.com/harmonic-ai
+- type: Authentication
+  url: authentication/harmonic-authentication.yml
+- type: Packages
+  url: packages/harmonic-packages.yml
+- type: SDKs
+  url: packages/harmonic-packages.yml
+- type: CLI
+  url: cli/harmonic-cli.yml
+- type: MCPServer
+  url: mcp/harmonic-mcp.yml
+- type: LLMsTxt
+  url: llms/harmonic-llms.txt
+- type: Conventions
+  url: conventions/harmonic-conventions.yml
+- type: ChangeLog
+  url: changelog/harmonic-changelog.yml
+- type: Lifecycle
+  url: lifecycle/harmonic-lifecycle.yml
+- type: DomainSecurity
+  url: security/harmonic-domain-security.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
