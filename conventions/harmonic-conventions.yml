@@ -1,0 +1,56 @@
+generated: '2026-07-19'
+method: searched
+source: >-
+  https://aristotle.harmonic.fun/ ; https://pypi.org/project/aristotlelib/ ;
+  https://github.com/septract/lean-aristotle-mcp (community MCP that documents
+  the async submit/poll surface)
+description: >-
+  Cross-cutting runtime semantics of the Aristotle API — how it behaves across
+  every operation rather than any single endpoint. Aristotle is an asynchronous
+  job API: you submit long-running proof / formalization work, then poll for or
+  download the result. Captured from Harmonic's docs and the official SDK
+  behavior; no OpenAPI is published.
+base_url: https://aristotle.harmonic.fun
+api_style: HTTPS API, API-key authenticated, asynchronous job submission + polling
+authentication:
+  scheme: API key (per-account secret)
+  delivery: ARISTOTLE_API_KEY environment variable or --api-key flag
+  detail: authentication/harmonic-authentication.yml
+job_model:
+  async: true
+  description: >-
+    Proof (submit) and formalization (formalize) tasks are long-running and can
+    run autonomously for up to 24 hours. Clients either block until completion
+    with the SDK/CLI --wait flag, or submit and later poll job status / download
+    the finished project.
+  submit_operations:
+  - submit    # fill `sorry` placeholders in a Lean 4 project and verify
+  - formalize # convert a document (LaTeX/NL) into formalized Lean 4
+  poll_operations:
+  - list      # list recent projects
+  - download  # fetch a completed project's files by project ID
+  wait_flag: --wait
+result_semantics:
+  verified_only: >-
+    Aristotle returns results only when formal verification succeeds; failed
+    proofs return no completed result (the proof simply is not produced).
+  artifact: Lean 4 project files (library-ready formalized proofs / code)
+idempotency:
+  supported: false
+  note: No idempotency-key header or contract is documented for the Aristotle API.
+pagination:
+  style: limit
+  note: The `list` operation accepts a --limit parameter; no cursor contract is documented.
+versioning:
+  api: No dated/header API version is documented.
+  sdk: aristotlelib uses semantic versioning (current 2.1.0). See changelog/harmonic-changelog.yml.
+error_handling:
+  note: >-
+    No public error-code registry or RFC 9457 problem+json envelope is
+    documented; failures surface as SDK/CLI errors or an absent result.
+cross_links:
+  authentication: authentication/harmonic-authentication.yml
+  cli: cli/harmonic-cli.yml
+  packages: packages/harmonic-packages.yml
+  changelog: changelog/harmonic-changelog.yml
+  lifecycle: lifecycle/harmonic-lifecycle.yml

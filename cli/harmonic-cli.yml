@@ -1,0 +1,39 @@
+generated: '2026-07-19'
+method: searched
+source: https://pypi.org/project/aristotlelib/
+description: >-
+  The Aristotle CLI — the `aristotle` command installed by the official
+  aristotlelib Python package (catalogued in packages/harmonic-packages.yml).
+  It drives the Aristotle formal-reasoning API against local Lean 4 project
+  directories and documents: submit sorries for proof, formalize LaTeX/markdown
+  documents into Lean, list recent projects, and download completed project
+  files. Long-running jobs are asynchronous; the `--wait` flag blocks until the
+  proof/formalization attempt completes, which makes it usable in CI/CD.
+install:
+  pip: pip install aristotlelib
+  uv: uv pip install aristotlelib
+auth:
+  env: ARISTOTLE_API_KEY
+  flag: --api-key
+  detail: authentication/harmonic-authentication.yml
+commands:
+  prove:
+  - name: submit
+    description: Fill the `sorry` placeholders in a local Lean 4 project and formally verify the completed proofs.
+    flags: [--project-dir, --wait]
+  formalize:
+  - name: formalize
+    description: Convert a document (e.g. a LaTeX paper) into formalized Lean 4.
+    flags: [--wait, --destination]
+  projects:
+  - name: list
+    description: List your recent Aristotle projects.
+    flags: [--limit]
+  - name: download
+    description: Download the files for a completed project by project ID.
+    flags: [--destination]
+notes: >-
+  All commands accept --api-key to authenticate directly without the
+  ARISTOTLE_API_KEY environment variable. The async submit/formalize + list/
+  download pattern is the core runtime convention (see
+  conventions/harmonic-conventions.yml).

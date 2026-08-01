@@ -1,0 +1,26 @@
+generated: '2026-07-19'
+method: searched
+source: https://aristotle.harmonic.fun/ ; https://pypi.org/project/aristotlelib/ ; https://aristotle.harmonic.fun/terms
+description: >-
+  Lifecycle posture for the Aristotle API. Harmonic is an early-stage lab: the
+  Aristotle API ships no dated/header API versioning, no public deprecation
+  policy, and no public status page or SLA at this pass. The client SDK
+  (aristotlelib) is versioned with semver. Absence of these surfaces is recorded
+  as honest data, not fabricated.
+versioning:
+  api:
+    scheme: none-documented
+    note: No dated or header-based API version is documented.
+  sdk:
+    scheme: semver
+    current: 2.1.0
+    detail: changelog/harmonic-changelog.yml
+deprecation:
+  policy_url: null
+  sunset_header: unknown
+  note: No public deprecation policy or RFC 8594 Sunset/Deprecation header support documented.
+sla:
+  url: null
+  uptime_target: null
+status_page: null
+terms: https://aristotle.harmonic.fun/terms

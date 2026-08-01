@@ -1,0 +1,22 @@
+generated: '2026-07-19'
+method: searched
+source: https://pypi.org/project/aristotlelib/
+description: >-
+  First-party Harmonic client library for the Aristotle API. Verified against
+  PyPI. aristotlelib is the official Python SDK and command-line tool (the
+  `aristotle` command) for the Aristotle formal-reasoning API; its command
+  surface is catalogued separately in cli/harmonic-cli.yml. The stated source
+  repository (github.com/harmonic-ai/aristotle-sdk) is not public at fetch time
+  (HTTP 404), but the package maintainers (laura-harmonic, vikram-harmonic) are
+  Harmonic accounts, so official status is confirmed via PyPI.
+packages:
+- language: python
+  registry: pypi
+  name: aristotlelib
+  url: https://pypi.org/project/aristotlelib/
+  source: https://github.com/harmonic-ai/aristotle-sdk
+  install: pip install aristotlelib
+  version: 2.1.0
+  provides_cli: aristotle
+  requires_python: '>=3.10'
+  official: true

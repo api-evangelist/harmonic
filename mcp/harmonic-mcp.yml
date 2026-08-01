@@ -1,0 +1,33 @@
+generated: '2026-07-19'
+method: searched
+status: community
+source: https://github.com/septract/lean-aristotle-mcp
+description: >-
+  Harmonic does not (as of this pass) publish an official MCP server for the
+  Aristotle API. A working community MCP server, lean-aristotle-mcp (maintained
+  by GitHub user septract), wraps the Aristotle cloud API so AI assistants can
+  invoke theorem proving during Lean development. It authenticates with a user's
+  own Aristotle API key. Recorded here as a real, usable server for this API and
+  clearly marked community/non-official — not a Harmonic product.
+server:
+  name: lean-aristotle-mcp
+  official: false
+  transport: stdio
+  install: uvx lean-aristotle-mcp
+  source: https://github.com/septract/lean-aristotle-mcp
+  auth:
+    env: ARISTOTLE_API_KEY
+    detail: authentication/harmonic-authentication.yml
+tools:
+- name: prove
+  description: Fill `sorry` statements in a Lean code snippet.
+- name: prove_file
+  description: Prove all sorries in a Lean file with automatic import resolution.
+- name: formalize
+  description: Convert natural-language mathematics into Lean 4.
+- name: check_proof
+  description: Poll the status of an async prove job.
+- name: check_prove_file
+  description: Poll the status of an async prove_file job.
+- name: check_formalize
+  description: Poll the status of an async formalize job.

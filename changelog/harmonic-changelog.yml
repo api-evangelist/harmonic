@@ -1,0 +1,39 @@
+generated: '2026-07-19'
+method: searched
+source: https://pypi.org/project/aristotlelib/#history
+description: >-
+  Harmonic does not publish a dated API changelog; the closest public,
+  version-dated record of the Aristotle developer surface is the release history
+  of the official aristotlelib Python SDK/CLI on PyPI. This artifact captures the
+  recent release window. The live PyPI history is the source of truth.
+versioning:
+  scheme: semver
+  current: 2.1.0
+  target: aristotlelib (Python SDK / CLI for the Aristotle API)
+  detail: packages/harmonic-packages.yml
+entries:
+- version: 2.1.0
+  date: '2026-06-18'
+  latest: true
+- version: 2.0.0
+  date: '2026-05-14'
+  breaking:
+  - Major version bump (2.0.0).
+- version: 1.0.1
+  date: '2026-04-07'
+- version: 1.0.0
+  date: '2026-03-17'
+  highlights:
+  - First stable 1.0 release of the Aristotle SDK/CLI.
+- version: 0.7.0
+  date: '2026-01-26'
+- version: 0.6.0
+  date: '2025-12-06'
+- version: 0.5.0
+  date: '2025-11-20'
+- version: 0.4.0
+  date: '2025-10-28'
+- version: 0.1.0
+  date: '2025-10-07'
+  highlights:
+  - Initial public release of aristotlelib.
