@@ -1,6 +1,7 @@
 generated: '2026-07-19'
 method: searched
-status: community
+status: third-party
+status_raw: community
 source: https://github.com/septract/lean-aristotle-mcp
 description: >-
   Harmonic does not (as of this pass) publish an official MCP server for the
