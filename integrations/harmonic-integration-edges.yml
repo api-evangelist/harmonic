@@ -1,0 +1,70 @@
+edges:
+- partner_name: Sequoia Capital
+  partner: sequoia-capital
+  partner_match: register
+  type: register
+  channel: standard-directory
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://sequoiacap.com/companies/harmonic
+  category: vc portfolio participation
+  contract_reference:
+    register: Sequoia Capital companies (sequoiacap.com/companies/<slug>, from the site's sitemap.xml)
+    standard: null
+    spec_file: null
+    role: vc-portfolio-company
+    registered_name: Harmonic
+    register_id: https://sequoiacap.com/companies/harmonic
+    register_country: null
+    register_website: https://harmonic.fun/
+    matched_domain: harmonic.fun
+    matched_by: domain
+    signal_note: 'participation only: the venture firm''s own published portfolio lists the company (investment);
+      an ownership and participation record, not conformance or certification'
+    detected_by: sweep-vc-portfolios.py
+    detected: '2026-10-21'
+  detected_by: sweep-vc-portfolios.py
+  first_seen: '2026-10-21'
+- partner_name: Index Ventures
+  partner: index-ventures
+  partner_match: register
+  type: register
+  channel: standard-directory
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://www.indexventures.com/companies/harmonic/
+  category: vc portfolio participation
+  contract_reference:
+    register: Index Ventures companies (indexventures.com/companies/)
+    standard: null
+    spec_file: null
+    role: vc-portfolio-company
+    registered_name: Harmonic
+    register_id: https://www.indexventures.com/companies/harmonic/
+    register_country: null
+    register_website: https://harmonic.fun/
+    matched_domain: harmonic.fun
+    matched_by: domain
+    signal_note: 'participation only: the venture firm''s own published portfolio lists the company (investment);
+      an ownership and participation record, not conformance or certification'
+    detected_by: sweep-vc-portfolios.py
+    detected: '2026-10-21'
+    sector: aiml
+  detected_by: sweep-vc-portfolios.py
+  first_seen: '2026-10-21'
+generated: '2026-10-21'
+method: searched
+source:
+- https://a16z.com/portfolio/
+- https://www.battery.com/company/
+- https://www.battery.com/wp-admin/admin-ajax.php
+- https://www.sequoiacap.com/our-companies/
+- https://www.sequoiacap.com/sitemap.xml
+- https://www.indexventures.com/companies/
+checked:
+- https://a16z.com/portfolio/
+- https://www.battery.com/company/
+- https://www.battery.com/wp-admin/admin-ajax.php
+- https://www.indexventures.com/companies/
+- https://www.sequoiacap.com/our-companies/
+- https://www.sequoiacap.com/sitemap.xml
